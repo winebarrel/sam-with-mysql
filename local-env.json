@@ -1,0 +1,5 @@
+{
+  "WithMySQLFunction": {
+    "MYSQL_HOST": "mysql"
+  }
+}

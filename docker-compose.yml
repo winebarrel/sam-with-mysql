@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    networks:
+      default: {}
+networks:
+  default:
+    name: sam-with-mysql

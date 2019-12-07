@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  sam-with-mysql
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 60
+
+Resources:
+  WithMySQLFunction:
+    # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: sam-with-mysql
+      CodeUri: src/
+      Handler: app.lambda_handler
+      Runtime: ruby2.5
+      #Role: arn:aws:iam::123456789012:role/lambda-invokable
+      Environment:
+        Variables:
+          MYSQL_HOST: mysql
